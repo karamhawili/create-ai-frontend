@@ -1,27 +1,15 @@
-import React, { useState } from 'react';
-import Navbar from '../../../components/platform/Navbar';
-import Layout from '../../../components/platform/Layout';
-import { GlobalStylePlatform } from '../../../styles/globalStyles';
-import styled from 'styled-components';
-import { db } from '../../../firebase/firebase';
-import {
-  serverTimestamp,
-  doc,
-  collection,
-  addDoc,
-  getDoc,
-  setDoc,
-} from 'firebase/firestore';
 import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import styled from 'styled-components';
+import Layout from '../../../components/platform/Layout';
+import Navbar from '../../../components/platform/Navbar';
 import { useAuth } from '../../../contexts/AuthContext';
-import { v4 as uuidV4 } from 'uuid';
-import { useProjectContext } from '../../../contexts/ProjectContext';
 import {
   addNewDraftFirestore,
-  addFileToUserFirestore,
   joinExistingProjectFirestore,
 } from '../../../firebase/firebaseFunctions';
-import { toast } from 'react-toastify';
+import { GlobalStylePlatform } from '../../../styles/globalStyles';
 
 const Section = styled.div`
   position: absolute;
@@ -123,13 +111,6 @@ const Index = () => {
   const [showButtons, setShowButtons] = useState(true);
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState('');
-
-  // const { currentProject, setCurrentProject } = useProjectContext()
-
-  // // if the user is working on a project, navigate to project
-  // if (currentProject !== null) {
-  //     navigateToProject(currentProject)
-  // }
 
   const { currentUser } = useAuth();
   const router = useRouter();
