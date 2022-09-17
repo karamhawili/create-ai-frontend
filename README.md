@@ -53,7 +53,7 @@ Once the design targets are present, clicking the generate button will generate 
 
 To give users control over which designs to keep as targets and which ones to update, we've added a simple lock feature that locks a target and prevents it from changing when the targets are reshuffled.
 
-<img src="https://raw.githubusercontent.com/karamhawili/create-dot-ai/main/assets/demo-lock-targets.gif" alt="screenshot 4" style="display: block; margin: 0 auto" />
+<img src="https://raw.githubusercontent.com/karamhawili/create-dot-ai/main/assets/demo-lock-targets.gif" alt="screenshot 4" width="500" />
 
 ## Training the GAN Model
 
